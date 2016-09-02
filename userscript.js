@@ -74,6 +74,9 @@ function couponInit() {
 					stopTimer();
 				}
 				delaytime = delaytime - 1000;
+                if (delaytime < 10000) {
+                    window.onbeforeunload='';
+                }
 				if (delaytime <= 0) {
 					console.log(delaytime);
 					kill();
