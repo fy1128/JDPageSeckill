@@ -6,7 +6,7 @@
 // @copyright      ying
 // @version        0.1
 // @grant  none
-// @namespace https://greasyfork.org/users/4421
+// @namespace https://greasyfork.org/zh-CN/users/9780
 // ==/UserScript==
 
 var timeCounter;
