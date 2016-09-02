@@ -39,9 +39,9 @@ var currtime = '';
 		body.insertBefore(div, document.getElementsByTagName('header')[0]);
 		div.appendChild(formdata);
 		div.appendChild(binfo);
-        binfo.onclick = function (event) {
-            startTimer();
-        }
+		binfo.onclick = function (event) {
+          	  	startTimer();
+        	}
 		//formdata.innerHTML = " <span style='line-height: 35px; maring-left: 20px;'>确认</span>";
 	}
 	//setInterval(function(){var time = UTCToLocalTimeString(new Date(),'yyyy/MM/dd hh:mm:ss');console.log(time)},1000);
