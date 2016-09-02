@@ -53,9 +53,9 @@ function couponInit() {
 	stime = new Date().getTime();
 	getServerdate(document.location, function(result) {
 		var d = new Date();
+		var currtime = new Date(result).getTime();
 		end = d.getTime();
 		cha = d.getTime() - (stime + ~~((end - stime) / 2));
-		var currtime = new Date(result).getTime();
 		//console.log('cha: '+cha);
 		var delaytime = seckilltime - currtime + cha;
 		//delaytime = new Date(delaytime).toTimeString().substring(0,8);
