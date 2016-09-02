@@ -34,20 +34,21 @@ var currtime = '';
 		
 		var binfo = document.createElement("button");
 		binfo.setAttribute("style", "margin-left: 20px; padding: 2px 5px; line-height: 25px;");
-		binfo.setAttribute("onclick", "startTimer();");
 		binfo.innerHTML = "确认";
 		
 		body.insertBefore(div, document.getElementsByTagName('header')[0]);
 		div.appendChild(formdata);
 		div.appendChild(binfo);
+        binfo.onclick = function (event) {
+            startTimer();
+        }
 		//formdata.innerHTML = " <span style='line-height: 35px; maring-left: 20px;'>确认</span>";
-
 	}
 	//setInterval(function(){var time = UTCToLocalTimeString(new Date(),'yyyy/MM/dd hh:mm:ss');console.log(time)},1000);
 
 })();
 
-var init = function() {
+function couponInit() {
 	div.innerHTML = "准备运行，正在获取数据";
 	stime = new Date().getTime();
 	getServerdate(document.location, function(result) {
@@ -69,7 +70,7 @@ var init = function() {
 				if (waited % 60 == 0 && delaytime > 60000) {
 					div.innerHTML = "正在重新对时...";
 					console.log("正在重新对时...");
-					setTimeout(init(), 1000);
+					setTimeout(couponInit(), 1000);
 					stopTimer();
 				}
 				delaytime = delaytime - 1000;
@@ -134,7 +135,7 @@ function startTimer(){
 	seckilltime = document.getElementById('time').value;
 	seckilltime = new Date((new Date().getFullYear())+','+(new Date().getMonth()+1)+','+(new Date().getDate())+' '+seckilltime).getTime();
 	window.scrollTo(0,0);
-	init();
+	couponInit();
 }
 
 function stopTimer(){
