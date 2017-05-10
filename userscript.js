@@ -170,5 +170,6 @@ function checkTime(i) {
 }
 
 function kill() {
-	document.getElementById("btnSubmit").click();
+	//document.getElementById("btnSubmit").click();
+	submitForm();
 }
